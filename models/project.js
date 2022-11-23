@@ -13,6 +13,19 @@ const reviewSchema = new mongoose.Schema({
   timestamps: true //option
 })
 
+// ? ********* ARTIST SCHEMA ************ 
+
+const artistSchema = new mongoose.Schema({
+  firstName: { type: String, required: true, maxlength: 20 },
+  lastName: { type: String, required: true, maxlength: 20 },
+  location: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  biography: { type: String, maxlength: 500, required: true },
+  displayPicture: { type: String },
+  owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+  reviews: [reviewSchema],
+})
+
 
 // ? ******* PROJECT SCHEMA ************* (Referenced relationship)
 
@@ -27,7 +40,7 @@ const projectSchema = new mongoose.Schema({
 })
 
 projectSchema.virtual('avgRating')
-  .get(function(){
+  .get(function () {
     if (!this.reviews.length) return 'No ratings yet'
     const sum = this.reviews.reduce((prev, next) => {
       return prev + next.rating
