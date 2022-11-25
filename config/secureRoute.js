@@ -1,9 +1,9 @@
 import { Unauthorised } from './errors.js'
 import { sendErrors } from './helpers.js'
-// import { } from 'dotenv/config'
+import { } from 'dotenv/config'
 import jwt from 'jsonwebtoken'
 import User from '../models/user.js'
-import { secret } from './environment.js'
+// import { secret } from './environment.js'
 
 
 export default async (req, res, next) => {
@@ -15,7 +15,7 @@ export default async (req, res, next) => {
     }
     const token = auth.replace('Bearer ', '')
     console.log(token)
-    const payload = jwt.verify(token, secret)
+    const payload = jwt.verify(token, process.env.SECRET)
     const userToVerify = await User.findById(payload.sub)
 
     if (!userToVerify) {
