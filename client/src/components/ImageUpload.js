@@ -17,14 +17,14 @@ const ImageUpload = ({ formdata, setFormdata }) => {
   }
 
 
-      
+
 
   return (
     <div className='form-container'>
       <div className="choose-file-button">
         <div className="field">
           <label>AI Project Image: </label>
-          { formdata.image ?
+          {formdata.image ?
             <img src={formdata.image} alt="Art image" />
             :
             <input
