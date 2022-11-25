@@ -1,10 +1,11 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import router from './config/router.js'
-import { port, dbURI } from './config/environment.js'
 import { } from 'dotenv/config'
 import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 // ! Variables
 const app = express()
