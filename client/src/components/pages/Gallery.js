@@ -1,19 +1,10 @@
 // Imports
 import { useState, useEffect, React } from 'react'
-
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
+import Avatar from 'react-avatar'
 
-//Imports from Bootstrap
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
-import Card from 'react-bootstrap/Card'
-import Container from 'react-bootstrap/Container'
-import { Link } from 'react-router-dom'
-
-
-//map through the array OF DATA that comes in and take the image (image key) from each entry and display them as backgrounds in divs. 
-//Each image should be a link to the page that corresponds with its ID
 
 const Gallery = () => {
 
@@ -23,7 +14,7 @@ const Gallery = () => {
   useEffect(() => {
     const getProjects = async () => {
       try {
-        const { data } = await axios.get('/api/projects')
+        const { data } = await axios.get('/api/projects/')
         setProjects(data)
         console.log(data)
       } catch (err) {
@@ -33,36 +24,37 @@ const Gallery = () => {
     getProjects()
   }, [])
 
+  console.log('PROJECTSSSS---->', projects)
+
   return (
     <main className='index-page'>
       <h1 className='gallery-title'>Gallery</h1>
-      <Container className='mt-4'>
-        <Row>
-          {projects.length > 0 &&
-            projects.map(project => {
-              const { _id, name, image } = project
-              console.log(_id)
-              return (
-                <Col key={_id} md='6' lg='4' className='project-card mb-4'>
-                  <Link to={`/project/${_id}`}>
-                    <Card>
-                      <div className='card-image' style={{ backgroundImage: `url(${image})` }}></div>
-                      <Card.Body>
-                        <Card.Title className='mb-0'>{name}</Card.Title>
-                      </Card.Body>
-                    </Card>
-                  </Link>
-                </Col>
-              )
-            })
-          }
-        </Row>
-      </Container>
+      {projects.length > 0 &&
+        projects.map(project => {
+          const { _id, name, image, owner } = project
+          console.log('QUESTO é IDDDD --->>>>>>', _id)
+          console.log('QUESTO é IDDDD --->>>>>>', name)
+          console.log('QUESTO é IMAGE --->>>>>>', image)
 
-    </main>
+          return (
+            <div key={_id} className='post'>
+              <div className='post_header'>
+                <Avatar className='post_avatar' instagramId="sitebase" name="Wim Mostmans" size={50} round="40px" />
+                <h3>{owner.username}</h3>
+              </div>
+              <Link to={`/project/${_id}`}>
+                <img className="post_image" src={image} alt={name} />
+              </Link>
+              <h4 className='post_text'><strong>{owner.username}</strong> {name}</h4>
+            </div >
+          )
+        })
+      }
+    </main >
   )
 
 }
+
 
 //'/api/projects'
 
