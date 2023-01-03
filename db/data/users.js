@@ -17,5 +17,5 @@ export default [
     email: 'mag666@email.com',
     password: 'pass',
     passwordConfirmation: 'pass'
-  }
+  },
 ]

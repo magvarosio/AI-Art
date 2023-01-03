@@ -1,5 +1,9 @@
 // gallery
 
+h3 {
+  font-size: 18px;
+}
+
 .post_image {
   width: 100%;
   border-top: 1px solid lightgrey;
@@ -9,12 +13,13 @@
 
 .post_text {
   font-weight: normal;
-  padding: 20px;
+  padding: 0px;
+  font-size: 20px;
 }
 
 .post_header {
   display: flex;
-  padding: 20px;
+  padding: 10px;
   align-items: center;
 }
 
