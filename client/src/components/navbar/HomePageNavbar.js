@@ -22,8 +22,8 @@ const HomePageNavbar = () => {
         {/* logo */}
         <Navbar.Brand as={Link} to="/">
           <img
-            src="🤖"
-            width="155px"
+            src="https://res.cloudinary.com/ddy4ifl5i/image/upload/v1672960765/LOGO_sf3gaa.png"
+            width="60px"
             height="62px"
             className="d-inline-block align-top"
             alt="Logo"

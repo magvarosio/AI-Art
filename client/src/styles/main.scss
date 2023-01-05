@@ -4,6 +4,41 @@ h3 {
   font-size: 18px;
 }
 
+
+// .bg-image {
+//   background-repeat: no-repeat;
+//   max-width: 100%;
+//   height: auto;
+
+// }
+
+.hero {
+  background-color: black;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+h1,
+p {
+  color: #FFFFFF8C;
+
+
+}
+
+
+
+
+.bg {
+  background-image: url("https://res.cloudinary.com/ddy4ifl5i/image/upload/v1672961763/Ai_e8nkxh.jpg");
+  height: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .post_image {
   width: 100%;
   border-top: 1px solid lightgrey;
