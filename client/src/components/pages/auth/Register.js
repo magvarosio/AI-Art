@@ -5,10 +5,18 @@ import { useNavigate } from 'react-router-dom'
 
 // bootstrap
 
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Form from 'react-bootstrap/Form'
-// import Button from 'react-bootstrap/Button' (remember to import Button later)
+import {
+  MDBBtn,
+  MDBContainer,
+  MDBCard,
+  MDBCardBody,
+  MDBCardImage,
+  MDBRow,
+  MDBCol,
+  MDBInput,
+  MDBCheckbox
+}
+  from 'mdb-react-ui-kit'
 
 
 
@@ -54,43 +62,47 @@ const Register = () => {
 
   return (
     <main className="form-page">
-      <Container className='mt-4'>
-        <Row>
-          <div className='col-10 offset-1 col-md-6 offset-md-3 col-lg-4 offset-lg-4'>
-            <form onSubmit={handleSubmit} className="mt-4">
-              <h1> REGISTER </h1>
-              {/* username */}
-              <label htmlFor="username">Username <span>*</span></label>
-              <input type="text" name="username" onChange={handleChange} value={formFields.username} placeholder="Username" />
-              {/* {error.username && (
-                <Form.Text>{error.username}</Form.Text>
-              )} */}
-              {/* email */}
-              <label htmlFor="email">Email <span>*</span></label>
-              <input type="email" name="email" onChange={handleChange} value={formFields.email} placeholder="Email" />
-              {/* {error.email && (
-                <Form.Text>{error.email}</Form.Text>
-              )} */}
-              {/* psw */}
-              <label htmlFor="password">Password <span>*</span></label>
-              <input type="password" name="password" onChange={handleChange} value={formFields.password} placeholder="Password" />
-              {/* {error.password && (
-                <Form.Text>{error.password}</Form.Text>
-              )} */}
-              {/* psw confirmation */}
-              <label htmlFor="passwordConfirmation">Confirm Password <span>*</span></label>
-              <input type="password" name="passwordConfirmation" onChange={handleChange} value={formFields.passwordConfirmation} placeholder="Password Confirmation" />
-              {/* {error.passwordConfirmation && (
-                <Form.Text>{error.passwordConfirmation}</Form.Text>
-              )} */}
-              {/* error */}
-              {error && <small className='text-danger'>{error}</small>}
-              {/* submit */}
-              <button className="btn btn-main w-100">Register</button>
-            </form>
-          </div>
-        </Row>
-      </Container>
+      <MDBContainer className='my-5'>
+        <MDBCard>
+          <MDBRow className='g-0 d-flex align-items-center'>
+
+            <MDBCol md='4'>
+              <MDBCardImage src='https://res.cloudinary.com/ddy4ifl5i/image/upload/v1672952192/rocklizardspock_futuristic_city_concept_art_stopped_in_time_atm_399b2e59-a728-41c2-bfb2-6a7a5857d349_bnqhuk.png' alt='phone' className='rounded-t-5 rounded-tr-lg-0' fluid />
+            </MDBCol>
+
+            <MDBCol md='8'>
+              <MDBCardBody>
+
+                <div className='col-10 offset-1 col-md-6 offset-md-3 col-lg-4 offset-lg-4'>
+                  <form onSubmit={handleSubmit} className="mt-4">
+                    <h1> REGISTER </h1>
+
+                    {/* username */}
+
+                    <MDBInput wrapperClass='mb-4' type="text" name="username" onChange={handleChange} value={formFields.username} label='Username' id='form1' />
+
+
+                    {/* email */}
+
+                    <MDBInput wrapperClass='mb-4' type='email' name="email" onChange={handleChange} value={formFields.email} label='Email address' id='form2' />
+
+                    {/* psw */}
+
+                    <MDBInput wrapperClass='mb-4' onChange={handleChange} name="password" value={formFields.password} label='Password' id='form3' type='password' />
+
+                    {/* psw confirmation */}
+                    <MDBInput wrapperClass='mb-4' onChange={handleChange} name="passwordConfirmation" value={formFields.passwordConfirmation} label='Password Confirmation' id='form4' type='passwordConfirmation' />
+                    {/* error */}
+                    {error && <small className='text-danger'>{error}</small>}
+                    {/* submit */}
+                    <MDBBtn className="mb-4 w-100" color="danger">Register</MDBBtn>
+                  </form>
+                </div>
+              </MDBCardBody>
+            </MDBCol>
+          </MDBRow>
+        </MDBCard>
+      </MDBContainer>
     </main >
   )
 }
