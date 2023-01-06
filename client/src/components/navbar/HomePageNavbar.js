@@ -36,10 +36,14 @@ const HomePageNavbar = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
+            <Nav.Link as={Link} to="/gallery">Gallery</Nav.Link>
             {isAuthenticated() ?
               <>
                 {/* <Nav.Link as={Link} to="/bread/new">Add Bread</Nav.Link> */}
+
+                <Nav.Link as={Link} to="/projects/imageuploadform">Add Picture</Nav.Link>
                 <span className='nav-link' onClick={() => handleLogout(navigate)}>Logout</span>
+
               </>
               :
               <>
@@ -47,7 +51,7 @@ const HomePageNavbar = () => {
                 <Nav.Link as={Link} to="/login">Login</Nav.Link>
               </>
             }
-            <Nav.Link as={Link} to="/gallery">Gallery</Nav.Link>
+            {/* <Nav.Link as={Link} to="/gallery">Gallery</Nav.Link> */}
 
           </Nav>
           {/* <Form className="d-flex">
