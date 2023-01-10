@@ -33,37 +33,43 @@ const Gallery = () => {
 
   return (
     <main className='index-page'>
-      <h1 className='gallery-title'>Gallery</h1>
-      {projects.length > 0 &&
-        projects.map(project => {
-          const { _id, name, image, owner } = project
-          console.log('QUESTO é IDDDD --->>>>>>', _id)
-          console.log('QUESTO é IDDDD --->>>>>>', name)
-          console.log('QUESTO é IMAGE --->>>>>>', image)
+      {/* <h1 className='gallery-title'>Gallery</h1> */}
+      <div className="container">
+        {projects.length > 0 &&
+          projects.map(project => {
+            const { _id, name, image, owner } = project
+            console.log('QUESTO é IDDDD --->>>>>>', _id)
+            console.log('QUESTO é IDDDD --->>>>>>', name)
+            console.log('QUESTO é IMAGE --->>>>>>', image)
 
-          return (
-            <div key={_id} className='post'>
-              <div className='post_header'>
-                <Avatar className='post_avatar' instagramId="sitebase" name="Wim Mostmans" size={40} round="40px" />
-                <h3>{owner.username}</h3>
-              </div>
-              <Link to={`/project/${_id}`}>
-                <img className="post_image" src={image} alt={name} />
-              </Link>
 
-              <FormControlLabel
-                control={<Checkbox icon={<FavoriteBorder />}
-                  checkedIcon={<Favorite />}
-                  name="checkedH"
-                  className="like"
-                />}
-                label="Like"
-              />
-              <h4 className='post_text'><strong>{owner.username}</strong> {name}</h4>
-            </div >
-          )
-        })
-      }
+
+            return (
+              <>
+                <div key={_id} className='post'>
+                  <div className='post_header'>
+                    <Avatar className='post_avatar' instagramId="sitebase" name="Wim Mostmans" size={40} round="40px" />
+                    <h3>{owner.username}</h3>
+                  </div>
+                  <Link to={`/project/${_id}`}>
+                    <img className="post_image" src={image} alt={name} />
+                  </Link>
+
+                  <FormControlLabel
+                    control={<Checkbox icon={<FavoriteBorder />}
+                      checkedIcon={<Favorite />}
+                      name="checkedH"
+                      className="like"
+                    />}
+                    label="Like"
+                  />
+                  <h4 className='post_text'><strong>{owner.username}</strong> {name}</h4>
+                </div >
+              </>
+            )
+          })
+        }
+      </div>
     </main >
   )
 

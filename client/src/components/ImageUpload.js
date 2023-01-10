@@ -1,5 +1,10 @@
 import axios from 'axios'
 
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+
+
+
 
 const ImageUpload = ({ formdata, setFormdata }) => {
 
@@ -20,22 +25,25 @@ const ImageUpload = ({ formdata, setFormdata }) => {
 
 
   return (
-    <div className='form-container'>
-      <div className="choose-file-button">
-        <div className="field">
-          <label>AI Project Image: </label>
-          {formdata.image ?
-            <img src={formdata.image} alt="Art image" />
-            :
-            <input
-              className="input"
-              type="file"
-              onChange={handleChange}
-            />
-          }
+    <>
+      <div className='form-container'>
+
+        <div className="choose-file-button">
+          <div className="field">
+            <label>AI Project Image: </label>
+            {formdata.image ?
+              <img src={formdata.image} alt="Art image" />
+              :
+              <input
+                className="input"
+                type="file"
+                onChange={handleChange}
+              />
+            }
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

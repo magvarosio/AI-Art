@@ -26,7 +26,6 @@ p {
 
 
 
-
 .bg {
   background-image: url("https://res.cloudinary.com/ddy4ifl5i/image/upload/v1672961763/Ai_e8nkxh.jpg");
   height: 80vh;
@@ -64,4 +63,34 @@ p {
   max-width: 500px;
   background-color: white;
   margin-bottom: 45px;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.post_image {
+  width: 100%;
+  object-fit: contain;
+}
+
+
+.image-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.field {
+  padding: 10px;
+}
+
+
+.img {
+  width: 60px;
 }
