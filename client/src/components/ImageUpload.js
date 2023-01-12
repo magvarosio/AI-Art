@@ -1,12 +1,12 @@
 import axios from 'axios'
-
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-
-
+import { useNavigate, useParams } from 'react-router'
 
 
 const ImageUpload = ({ formdata, setFormdata }) => {
+
+  const navigate = useNavigate()
+  const { projectId } = useParams()
+
 
   const handleChange = async (event) => {
     try {
@@ -21,6 +21,9 @@ const ImageUpload = ({ formdata, setFormdata }) => {
     }
   }
 
+  const handleClick = () => {
+    navigate(`projects/${projectId}`)
+  }
 
 
 
@@ -38,6 +41,7 @@ const ImageUpload = ({ formdata, setFormdata }) => {
                 className="input"
                 type="file"
                 onChange={handleChange}
+                onSubmit={handleClick}
               />
             }
           </div>

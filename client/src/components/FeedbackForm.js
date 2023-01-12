@@ -15,8 +15,8 @@ const FeedbackForm = () => {
   const stars = Array(5).fill(0)
 
 
-  const [ error, setError ] = useState(false)
-  const [ formdata, setFormdata ] = useState({
+  const [error, setError] = useState(false)
+  const [formdata, setFormdata] = useState({
     rating: '',
     text: '',
   })
@@ -45,7 +45,7 @@ const FeedbackForm = () => {
     setFormdata(updatedReviewField)
     if (error) setError('')
   }
-  
+
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -54,13 +54,13 @@ const FeedbackForm = () => {
         console.log('inside')
         const { data } = await axios.put(`/api/projects/${projectId}/reviews/${reviewId}`, formdata, {
           headers: {
-            Authorization: `Bearer ${getToken()}`, 
+            Authorization: `Bearer ${getToken()}`,
           },
         })
       } else {
         const { data } = await axios.post(`/api/projects/${projectId}/reviews`, formdata, {
           headers: {
-            Authorization: `Bearer ${getToken()}`, 
+            Authorization: `Bearer ${getToken()}`,
           },
         })
       }
@@ -98,7 +98,7 @@ const FeedbackForm = () => {
               <FaStar
                 key={index}
                 size={24}
-                onClick={() => handleClick(index + 1)} 
+                onClick={() => handleClick(index + 1)}
                 onMouseOver={() => handleMouseOver(index + 1)}
                 onMouseLeave={handleMouseLeave}
                 color={(hoverValue || formdata.rating) > index ? colors.orange : colors.grey}
@@ -113,8 +113,8 @@ const FeedbackForm = () => {
           onChange={handleChange}
         />
         <div>
-        
-          <button className="submit-feedback-button" >
+
+          <button className="submit-feedback-button">
             Submit feedback
           </button>
           <button>Delete Feedback</button>

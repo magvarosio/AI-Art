@@ -3,22 +3,35 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { isOwner, getToken } from '../helpers/auth'
 
+
 // Bootstrap Components
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
+import {
+  MDBCard,
+  MDBCardBody,
+  MDBCardImage,
+  MDBCol,
+  MDBContainer,
+  MDBIcon,
+  MDBRow,
+  MDBTypography
+} from 'mdb-react-ui-kit'
+
 
 const Profile = () => {
 
   const { projectId } = useParams()
-  console.log('useParams ---->', useParams)
+  const currentDate = new Date()
+  // console.log('useParams ---->', useParams)
   const navigate = useNavigate()
 
 
   const [project, setProject] = useState(null)
   const [errors, setErrors] = useState(false)
- 
+
   const getProject = useCallback(async () => {
     try {
       const { data } = await axios.get(`/api/projects/${projectId}`)
@@ -32,7 +45,7 @@ const Profile = () => {
   }, [projectId])
 
   useEffect(() => {
-    
+
     getProject()
   }, [projectId])
 
@@ -40,7 +53,7 @@ const Profile = () => {
     try {
       await axios.delete(`/api/projects/${projectId}/reviews/${reviewId}`, {
         headers: {
-          Authorization: `Bearer ${getToken()}`, 
+          Authorization: `Bearer ${getToken()}`,
         },
       })
       getProject()
@@ -55,59 +68,146 @@ const Profile = () => {
         <Row>
           {project ?
             <>
-
               <div className='profile'>
-                <Col md="6">
-                  {/* ****  USER IMG ******* */}
-                  <img src={project.image} alt={project.name} />
+
+                {/* ****  USER IMG ******* */}
+                <Col md="2">
+                  <div >
+                    <img src={project.image} alt={project.name} />
+                  </div>
+                  <hr />
                 </Col>
-                <hr />
+
+
+
                 {/* **** Artist ******* */}
-                <h2><span>🖼</span> Artist </h2>
-                <h1>{project.owner.username}</h1>
-                <hr />
-                {/* **** PROMPT ******* */}
-                <h2><span>📘</span> Midjourney prompt: </h2>
-                <h2>{project.name}</h2>
-                <hr />
                 <Col md="6">
-                  {/* **** YEAR ******* */}
-                  <h2><span>🔵</span> Year</h2>
-                  <p>{project.year}</p>
-                  <hr />
-                  {/* AVG Rating  */}
-                  <h2><span>🏁</span> Average Rating </h2>
-                  <p>{project.avgRating}</p>
-                  <hr />
-                  {/* AVG Reviews  */}
-                  <h2><span>💬</span> Reviews </h2>
                   <div>
-                    {project.reviews.length > 0 && project.reviews.map(review => {
-                      return (
-                        <div key={review._id}>
-                          <p>{review.text}</p>
-                          <p>{review.rating}</p>
-                          <div>
-                            <Link to={`/projects/${projectId}/reviews/${review._id}/edit`}>Edit</Link>
-                            <button onClick={() => deleteReview(review._id)}>Delete</button>
-                          </div>
-                        </div>
-                      )
-                    })}
+                    <p className="det-subtitle"><span>🖼</span> Artist</p>
+                    <p className="det-text">{project.owner.username}</p>
                   </div>
 
-                  <Link to={`/projects/${projectId}/reviews`}>Add review</Link>
                   <hr />
-                  <Link to="/projects" className='btn btn-main'>Back to projects</Link>
+
+
+                  {/* **** PROMPT ******* */}
+                  <p className="det-subtitle"><span>📘</span> AI prompt: </p>
+                  <p className="det-text">{project.name}</p>
+                  <hr />
+
+
+                  {/* **** YEAR ******* */}
+                  <p className="det-subtitle"><span>🔵</span> Year</p>
+                  <p className="det-text">{project.year}</p>
+                  <hr />
+                  {/* AVG Rating  */}
+                  <p className="det-subtitle"><span>🏁</span> Average Rating </p>
+                  <p className="det-text">{project.avgRating}</p>
+                  <hr />
                 </Col>
+
+
+
+                {/* Reviews  */}
+                <p className="det-subtitle"><span>💬</span> Reviews </p>
+                <div>
+                  {project.reviews.length > 0 && project.reviews.map(review => {
+
+
+                    return (
+                      <div key={review._id}>
+
+
+                        {/* <MDBCardBody className="p-4">
+                          <div className="d-flex flex-start">
+                            <MDBCardImage
+                              className="rounded-circle shadow-1-strong me-3"
+                              src="https://iwf1.com/scrapekod/icons/repository.hal9000.png"
+                              alt="avatar"
+                              width="60"
+                              height="60"
+                            />
+                            <div>
+                              <MDBTypography tag="h6" className="fw-bold mb-1 text-black">
+                                {review.comment.username}
+                              </MDBTypography>
+                              <div className="d-flex align-items-center mb-3 text-black">
+                                <p className="mb-0">
+                                  Thu Dec 15 2022
+                                </p>
+
+                              </div>
+                              <p className="mb-0 text-black">
+                                Amazing!
+                              </p>
+                            </div>
+                          </div>
+                        </MDBCardBody> */}
+
+
+
+
+                        <MDBCardBody className="p-4">
+                          <div className="d-flex flex-start">
+                            <MDBCardImage
+                              className="rounded-circle shadow-1-strong me-3"
+                              src="https://miro.medium.com/fit/c/224/224/1*jcCj4opBePGfTeiHfZwyiw.png"
+                              alt="avatar"
+                              width="60"
+                              height="60"
+                            />
+                            <div>
+                              <MDBTypography tag="h6" className="fw-bold mb-1 text-black">
+                                Rating: {review.rating}
+                              </MDBTypography>
+                              <p className="mb-0">
+                                {currentDate.toString(review.created_at)}
+                              </p>
+                              {/* <MDBTypography tag="h6" className="fw-bold mb-1 text-white">
+                                {review.rating}
+                              </MDBTypography> */}
+
+
+                              <div className="d-flex align-items-center mb-3 text-black">
+
+
+                              </div>
+                              <p className="mb-0 text-black">
+                                {review.text}
+                              </p>
+                            </div>
+                          </div>
+                        </MDBCardBody>
+                        {/* <p>{review.text}</p>
+                        <p>{review.rating}</p> */}
+
+
+
+
+                        <div>
+                          <Link to={`/projects/${projectId}/reviews/${review._id}/edit`}>Edit</Link>
+                          <button onClick={() => deleteReview(review._id)}>Delete</button>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+
+                <Link to={`/projects/${projectId}/reviews`}>Add review</Link>
+                <hr />
+
+                <Link to="/projects" className='btn btn-main'>Back to projects</Link>
+
+
               </div>
+
             </>
             :
             errors ? <h2>Something went wrong!</h2> : <h2>Loading</h2>
           }
         </Row>
       </Container>
-    </main>
+    </main >
   )
 }
 
