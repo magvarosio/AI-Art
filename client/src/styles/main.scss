@@ -113,3 +113,29 @@ p {
 .mb-0 {
   color: rgb(74, 72, 72);
 }
+
+
+.bottoni {
+  display: flex;
+  padding: 5px;
+
+}
+
+.btn.btn-primary {
+  margin-right: 10px;
+}
+
+#delete.btn.btn-primary {
+  margin-bottom: 32px;
+}
+
+
+.textarea {
+  padding: 10px;
+
+}
+
+
+.form-control-sm {
+  margin: 31px 20px;
+}

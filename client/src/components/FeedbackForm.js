@@ -108,16 +108,27 @@ const FeedbackForm = () => {
         </div>
         <textarea
           placeholder="Give a rating by clicking the stars and leave some feedback"
-          className="textarea"
+          className="form-control form-control-sm"
           name="text"
+          rows="4"
           onChange={handleChange}
         />
         <div>
 
-          <button className="submit-feedback-button">
+          <button
+            className="btn btn-primary"
+            type="button"
+            onClick={handleSubmit}
+
+          >
             Submit feedback
           </button>
-          <button>Delete Feedback</button>
+
+          <button
+            className="btn btn-primary"
+            type="button">
+            Delete Feedback
+          </button>
         </div>
       </form>
     </div>

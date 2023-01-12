@@ -8,6 +8,7 @@ import { isOwner, getToken } from '../helpers/auth'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
 
 import {
   MDBCard,
@@ -78,7 +79,26 @@ const Profile = () => {
                   <hr />
                 </Col>
 
+                {/* add review button*/}
 
+                <Link to={`/projects/${projectId}/reviews`}>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    id="delete">
+                    Add review
+                  </button>
+                </Link>
+
+
+                <Link to="/projects" className='btn btn-main'>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    id="delete">
+                    Back to projects
+                  </button>
+                </Link>
 
                 {/* **** Artist ******* */}
                 <Col md="6">
@@ -108,8 +128,13 @@ const Profile = () => {
 
 
 
+
+
                 {/* Reviews  */}
-                <p className="det-subtitle"><span>💬</span> Reviews </p>
+                <br />
+                <br />
+
+                {/* <p className="det-subtitle"><span>💬</span> Reviews </p> */}
                 <div>
                   {project.reviews.length > 0 && project.reviews.map(review => {
 
@@ -184,19 +209,32 @@ const Profile = () => {
 
 
 
-                        <div>
-                          <Link to={`/projects/${projectId}/reviews/${review._id}/edit`}>Edit</Link>
-                          <button onClick={() => deleteReview(review._id)}>Delete</button>
+                        <div className="bottoni">
+
+
+                          <Link to={`/projects/${projectId}/reviews/${review._id}/edit`}>
+                            <button
+                              type="button"
+                              className="btn btn-primary">
+                              Edit
+                            </button>
+                          </Link>
+
+
+                          <button
+                            type="button"
+                            className="btn btn-primary"
+                            id="delete"
+                            onClick={() => deleteReview(review._id)}>Delete</button>
                         </div>
                       </div>
                     )
                   })}
                 </div>
 
-                <Link to={`/projects/${projectId}/reviews`}>Add review</Link>
                 <hr />
 
-                <Link to="/projects" className='btn btn-main'>Back to projects</Link>
+
 
 
               </div>
