@@ -1,7 +1,8 @@
 // Imports
 import { useState, useEffect, React } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+
 
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Checkbox from '@material-ui/core/Checkbox'
@@ -15,6 +16,9 @@ const Gallery = () => {
 
   //! State
   const [projects, setProjects] = useState([])
+  const { projectId } = useParams()
+  console.log('useParams ---->', useParams)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const getProjects = async () => {
@@ -29,6 +33,8 @@ const Gallery = () => {
     getProjects()
   }, [])
 
+
+
   console.log('PROJECTSSSS---->', projects)
 
   return (
@@ -36,7 +42,7 @@ const Gallery = () => {
       {/* <h1 className='gallery-title'>Gallery</h1> */}
       <div className="container">
         {projects.length > 0 &&
-          projects.map(project => {
+          projects.slice(0).reverse().map(project => {
             const { _id, name, image, owner } = project
             console.log('QUESTO é IDDDD --->>>>>>', _id)
             console.log('QUESTO é IDDDD --->>>>>>', name)
@@ -63,6 +69,8 @@ const Gallery = () => {
                     />}
                     label="Like"
                   />
+
+
                   <h4 className='post_text'><strong>{owner.username}</strong> {name}</h4>
                 </div >
               </>

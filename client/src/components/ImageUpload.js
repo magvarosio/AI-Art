@@ -33,7 +33,7 @@ const ImageUpload = ({ formdata, setFormdata }) => {
 
         <div className="choose-file-button">
           <div className="field">
-            <label>AI Project Image: </label>
+            <label> AI Project Image: </label>
             {formdata.image ?
               <img src={formdata.image} alt="Art image" />
               :

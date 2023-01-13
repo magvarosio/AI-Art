@@ -10,7 +10,7 @@ import { getToken } from './helpers/auth'
 const ImageUploadForm = () => {
   const navigate = useNavigate()
 
-  const [ formdata, setFormdata ] = useState({
+  const [formdata, setFormdata] = useState({
     name: '',
     year: '',
     image: '',
@@ -25,11 +25,11 @@ const ImageUploadForm = () => {
     try {
       const { data } = await axios.post('/api/projects', formdata, {
         headers: {
-          Authorization: `Bearer ${getToken()}`, 
+          Authorization: `Bearer ${getToken()}`,
         },
       })
       console.log('SUCCESS ->', data._id)
-      navigate('/projects')
+      navigate('/gallery')
     } catch (err) {
       console.log(err.response.data)
     }
@@ -43,7 +43,7 @@ const ImageUploadForm = () => {
       <main className="section">
         <div className="small-section">
           <div className="mobile">
-            <form onSubmit={handleSubmit}> 
+            <form onSubmit={handleSubmit}>
               <div className="field">
                 <label htmlFor="name" className="label">Project Name</label>
                 <div className="control">
@@ -68,12 +68,14 @@ const ImageUploadForm = () => {
                   />
                 </div>
               </div>
-              <ImageUpload 
+              <ImageUpload
                 formdata={formdata}
                 setFormdata={setFormdata}
               />
               <div className="field">
-                <button className="img-submit-button" type="submit">Submit</button>
+                <button
+                  className="btn btn-primary"
+                  type="submit">Submit</button>
               </div>
             </form>
           </div>
