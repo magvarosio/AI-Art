@@ -10,6 +10,7 @@
 
 ## Table of Contents
 - [Concept](#concept)
+- [Demo](#demo)
 - [Project Brief](#project-brief)
 - [Technologies Used](#technologies-used)
 - [Installation instructions](#installation-instructions)
@@ -28,6 +29,10 @@ The images on this website are all produced using AI.
 
 ## Timeline
 - 9 days
+
+## Demo
+
+![gif github](https://user-images.githubusercontent.com/112773333/212740198-8107d9ba-3bb2-482a-b656-d5b2b6885227.gif) 
 
 
 ## Project Brief
