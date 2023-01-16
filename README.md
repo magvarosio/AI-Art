@@ -18,7 +18,7 @@
 - [Creating the Frontend with React](#creating-the-frontend-with-react)
 - [Challenges and Wins](#challenges-and-wins)
 - [Key Learnings](#key-learnings)
-- [Author](#authors)
+- [Contact](#contact)
 
 ## Concept
 
