@@ -1,21 +1,22 @@
 /* eslint-disable comma-dangle */
 export default [
   {
-    username: 'sussie666',
-    email: 'sussie666@email.com',
+    username: 'sussie',
+    email: 'sussie@email.com',
     password: 'pass',
     passwordConfirmation: 'pass'
   },
   {
-    username: 'imra666',
-    email: 'imra666@email.com',
+    username: 'imra',
+    email: 'imra@email.com',
     password: 'pass',
     passwordConfirmation: 'pass'
   },
   {
-    username: 'mag666',
-    email: 'mag666@email.com',
+    username: 'mag',
+    email: 'mag@email.com',
     password: 'pass',
     passwordConfirmation: 'pass'
   },
+
 ]
