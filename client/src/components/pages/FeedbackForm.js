@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { FaStar } from 'react-icons/fa'
 import { useParams, useNavigate } from 'react-router'
-import { getToken } from './helpers/auth'
+import { getToken } from '../helpers/auth'
 
 
 const colors = {

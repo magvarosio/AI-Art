@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import ImageUpload from './ImageUpload'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { getToken } from './helpers/auth'
+import { getToken } from '../helpers/auth'
 
 
 

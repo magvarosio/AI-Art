@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import ImageUploadForm from './components/ImageUploadForm'
-import FeedbackForm from './components/FeedbackForm'
+
 
 import { useEffect } from 'react'
 //import axios from 'axios'
@@ -8,6 +7,8 @@ import Home from './components/pages/Home'
 import HomePageNavbar from './components/navbar/HomePageNavbar'
 import Gallery from './components/pages/Gallery'
 import Profile from './components/pages/Profile'
+import ImageUploadForm from './components/pages/ImageUploadForm'
+import FeedbackForm from './components/pages/FeedbackForm'
 
 // components
 
