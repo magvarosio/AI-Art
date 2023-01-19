@@ -4,10 +4,10 @@ import { Link, useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import Checkbox from '@material-ui/core/Checkbox'
-import Favorite from '@material-ui/icons/Favorite'
-import FavoriteBorder from '@material-ui/icons/FavoriteBorder'
+// import FormControlLabel from '@material-ui/core/FormControlLabel'
+// import Checkbox from '@material-ui/core/Checkbox'
+// import Favorite from '@material-ui/icons/Favorite'
+// import FavoriteBorder from '@material-ui/icons/FavoriteBorder'
 
 import Avatar from 'react-avatar'
 
@@ -61,14 +61,14 @@ const Gallery = () => {
                     <img className="post_image" src={image} alt={name} />
                   </Link>
 
-                  <FormControlLabel
+                  {/* <FormControlLabel
                     control={<Checkbox icon={<FavoriteBorder />}
                       checkedIcon={<Favorite />}
                       name="checkedH"
                       className="like"
                     />}
                     label="Like"
-                  />
+                  /> */}
 
 
                   <h4 className='post_text'><strong>{owner.username}</strong> {name}</h4>
