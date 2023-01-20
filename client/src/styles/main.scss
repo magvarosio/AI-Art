@@ -5,13 +5,6 @@ h3 {
 }
 
 
-// .bg-image {
-//   background-repeat: no-repeat;
-//   max-width: 100%;
-//   height: auto;
-
-// }
-
 
 
 body,
@@ -39,6 +32,7 @@ p {
   border-top: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey;
   object-fit: contain;
+  margin-bottom: 18px;
 }
 
 .post_text {
