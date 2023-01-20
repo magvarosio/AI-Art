@@ -91,12 +91,12 @@ const Profile = () => {
                 </Link>
 
 
-                <Link to="/projects" className='btn btn-main'>
+                <Link to="/gallery">
                   <button
                     type="button"
                     className="btn btn-primary"
                     id="delete">
-                    Back to projects
+                    Back to gallery
                   </button>
                 </Link>
 
