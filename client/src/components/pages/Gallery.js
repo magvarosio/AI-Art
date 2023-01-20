@@ -3,7 +3,6 @@ import { useState, useEffect, React } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-
 // import FormControlLabel from '@material-ui/core/FormControlLabel'
 // import Checkbox from '@material-ui/core/Checkbox'
 // import Favorite from '@material-ui/icons/Favorite'
@@ -60,15 +59,6 @@ const Gallery = () => {
                   <Link to={`/project/${_id}`}>
                     <img className="post_image" src={image} alt={name} />
                   </Link>
-
-                  {/* <FormControlLabel
-                    control={<Checkbox icon={<FavoriteBorder />}
-                      checkedIcon={<Favorite />}
-                      name="checkedH"
-                      className="like"
-                    />}
-                    label="Like"
-                  /> */}
 
 
                   <h4 className='post_text'><strong>{owner.username}</strong> {name}</h4>

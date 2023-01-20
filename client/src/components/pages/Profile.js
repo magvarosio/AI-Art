@@ -143,35 +143,6 @@ const Profile = () => {
                       <div key={review._id}>
 
 
-                        {/* <MDBCardBody className="p-4">
-                          <div className="d-flex flex-start">
-                            <MDBCardImage
-                              className="rounded-circle shadow-1-strong me-3"
-                              src="https://iwf1.com/scrapekod/icons/repository.hal9000.png"
-                              alt="avatar"
-                              width="60"
-                              height="60"
-                            />
-                            <div>
-                              <MDBTypography tag="h6" className="fw-bold mb-1 text-black">
-                                {review.comment.username}
-                              </MDBTypography>
-                              <div className="d-flex align-items-center mb-3 text-black">
-                                <p className="mb-0">
-                                  Thu Dec 15 2022
-                                </p>
-
-                              </div>
-                              <p className="mb-0 text-black">
-                                Amazing!
-                              </p>
-                            </div>
-                          </div>
-                        </MDBCardBody> */}
-
-
-
-
                         <MDBCardBody className="p-4">
                           <div className="d-flex flex-start">
                             <MDBCardImage
