@@ -33,7 +33,8 @@ The images on this website are all produced using AI.
 
 ## Deployment 
 
-This website was deployed with Heroku and is accessible [HERE] (https://p3seiaiart.herokuapp.com/). When not in use, Heroku's free servers sleep, so please give them a few seconds to wake up!
+This website was deployed with Heroku and is accessible here -> https://p3seiaiart.herokuapp.com/ .
+ When not in use, Heroku's free servers sleep, so please give them a few seconds to wake up!
 
 ## Project Brief
 
