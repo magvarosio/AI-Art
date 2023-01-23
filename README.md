@@ -166,15 +166,6 @@ I also created many of the images used on the website using an AI program called
 
 ![image11](https://user-images.githubusercontent.com/112773333/212734249-8e6558b4-958c-4c4c-b606-b6072068b391.png)
 
-### Responsiveness
-
-I also worked to make every page mobile responsive and I added an avatar and the heart-shaped Like button.
-To add the like button, I utilised the FormControlLabel from the material ui library. This was a good opportunity to start using libraries and see their potential in helping to implement certain features.
-
-
-<img width="350" alt="Screenshot 2023-01-16 at 18 06 08" src="https://user-images.githubusercontent.com/112773333/212742280-8d0cf327-786b-45a6-aa07-3cf93c34a653.png">
-
-
 
 ## Challenges and Wins
 
