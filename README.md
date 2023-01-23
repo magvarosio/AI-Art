@@ -190,7 +190,6 @@ I think the design is clean-looking. I'm especially happy with the gallery and t
 ## Future Improvement
 
 - Include User Profile
-- Fix bugs. I'm having an issue with Heroku right now that's keeping me from deploying the website. As soon as I figure out what the problem is, I'll write about that.
 
 ## Key Learnings
 
