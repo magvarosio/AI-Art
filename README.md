@@ -190,8 +190,7 @@ Overall, this is my first significant project, and it's incredibly rewarding to 
 
 ## Contact
 
-- LinkedIn - [Margherita (Mag) Varosio](https://www.linkedin.com/in/margherita-varosio/)
-- Email - margherita.varosio@gmail.com
+- Email - amvarosio8@gmail.com
 
 [Back to the top ⬆️](#idtext)
 
